@@ -1,6 +1,7 @@
 <?php
 /**
  * Plugin Name:       [VIP] Full Page Cache Helper
+ * Plugin URI:        https://github.com/Automattic/vip-fullpagecache-helper
  * Description:       Full-page output caching with automatic page-type detection, cache versioning, and flexible per-request enable/disable control.
  * Version:           1.0.0
  * Author:            Automattic
