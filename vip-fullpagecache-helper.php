@@ -233,7 +233,7 @@ namespace VIP_PageCache_Helper\Cache {
      * @return string|null
      */
     function get() {
-        if ( is_insane_admin_bypass() ) {
+        if ( is_admin_bypass() ) {
             return null;
         }
 
@@ -268,7 +268,7 @@ namespace VIP_PageCache_Helper\Cache {
      *
      * @return bool
      */
-    function is_insane_admin_bypass() {
+    function is_admin_bypass() {
         if (
             \current_user_can( 'manage_options' )
             && isset( $_GET[ BYPASS_KEY ] )
