@@ -33,7 +33,13 @@ namespace VIP_PageCache_Helper {
      * @return void
      */
     function maybe_enable_caching() {
-        if ( \is_admin() || \wp_doing_ajax() || \wp_is_json_request() ) {
+        if (
+            \is_admin()
+            || \wp_doing_ajax()
+            || \wp_is_json_request()
+            || \is_user_logged_in()     // skip caching for logged-in users
+            || ( defined( 'WP_DEBUG' ) && WP_DEBUG ) // skip if debugging is active
+        ) {
             return;
         }
 
